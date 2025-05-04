@@ -5,10 +5,8 @@ public class CalculImpotNet implements ICalculateur {
     private double decote;
     private double contributionExceptionnelle;
 
-    public CalculImpotNet(double montantImpot, double decote, double contributionExceptionnelle) {
-        this.montantImpot = montantImpot;
-        this.decote = decote;
-        this.contributionExceptionnelle = contributionExceptionnelle;
+    public CalculImpotNet() {
+
     }
 
     @Override

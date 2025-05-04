@@ -9,8 +9,6 @@ public interface ICalculateurImpotReusine {
     public void setNbEnfantsSituationHandicap(int nbEnfSituationHandicap);
     public void setParentIsole(boolean parentIsole);
 
-    public void calculImpotSurRevenuNet();
-
     public int getRevenuNetDeclatant1();
     public int getRevenuNetDeclatant2();
     public double getContribExceptionnelle();

@@ -3,14 +3,14 @@ package com.kerware.simulateurreusine;
 public class CalculBaisseImpot implements ICalculateur {
 	private double montantImpotDeclarants;
 	private double montantImpot;
-	
-	public CalculBaisseImpot(double montantImpotDeclarants, double montantImpot) {
-		this.montantImpotDeclarants = montantImpotDeclarants;
-		this.montantImpot = montantImpot;
+
+	public CalculBaisseImpot() {
+
 	}
 	
     @Override
     public double calculer() {
+		System.out.println("baisse impot : " + this.montantImpotDeclarants + " - " + this.montantImpot + " = " + (this.montantImpotDeclarants - this.montantImpot));
     	return this.montantImpotDeclarants - this.montantImpot;
     }
 

@@ -7,14 +7,16 @@ public class CalculAbattement implements ICalculateur {
     private double revenuNetDeclarant2;
     private SituationFamilialeReusine sitFam;
 
-    public CalculAbattement(double revenuNetDeclarant1, double revenuNetDeclarant2, SituationFamilialeReusine sitFam) {
-        this.revenuNetDeclarant1 = revenuNetDeclarant1;
-        this.revenuNetDeclarant2 = revenuNetDeclarant2;
-        this.sitFam = sitFam;
+    public CalculAbattement() {
+
     }
 
     @Override
     public double calculer() {
+        if ( revenuNetDeclarant1  < 0 || revenuNetDeclarant2 < 0 ) {
+            throw new IllegalArgumentException("Le revenu net ne peut pas être négatif");
+        }
+
         double abattement;
 
         long abattement1 = Math.round(revenuNetDeclarant1 * tauxAbattement);

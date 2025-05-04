@@ -7,14 +7,15 @@ public class CalculImpotAvantDecote implements ICalculateur {
     private double revenuFicalReference;
     private double nbParts;
 
-    public CalculImpotAvantDecote(double revenuFicalReference, double nbParts) {
-        this.revenuFicalReference = revenuFicalReference;
-        this.nbParts = nbParts;
+    public CalculImpotAvantDecote() {
+
     }
 
     @Override
     public double calculer() {
         double revenuImposable = revenuFicalReference / nbParts;
+        System.out.println("nb parts pour impot : " + nbParts);
+        System.out.println("revenuImposable : " + revenuImposable);
         double montantImpot = 0;
         int i = 0;
 
@@ -29,6 +30,7 @@ public class CalculImpotAvantDecote implements ICalculateur {
         } while(i < 5);
 
         montantImpot = montantImpot * nbParts;
+        System.out.println("Impot avant decote après baisse et plafond : " + Math.round(montantImpot));
         return Math.round(montantImpot);
     }
 

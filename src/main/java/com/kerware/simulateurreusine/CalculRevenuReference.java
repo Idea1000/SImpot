@@ -5,19 +5,23 @@ public class CalculRevenuReference implements ICalculateur {
     private double revenuNetDeclarant2;
     private double abattement;
 
-    public CalculRevenuReference(double revenuNetDeclarant1, double revenuNetDeclarant2, double abattement) {
-        this.revenuNetDeclarant1 = revenuNetDeclarant1;
-        this.revenuNetDeclarant2 = revenuNetDeclarant2;
-        this.abattement = abattement;
+    public CalculRevenuReference() {
+
     }
 
     @Override
     public double calculer() {
+        if ( revenuNetDeclarant1  < 0 || revenuNetDeclarant2 < 0 ) {
+            throw new IllegalArgumentException("Le revenu net ne peut pas être négatif");
+        }
+
         double revenuFicalReference = revenuNetDeclarant1 + revenuNetDeclarant2 - abattement;
 
         if (revenuFicalReference < 0) {
             revenuFicalReference = 0;
         }
+
+        System.out.println("Revenu fiscal de reference : " + revenuFicalReference);
 
         return revenuFicalReference;
     }

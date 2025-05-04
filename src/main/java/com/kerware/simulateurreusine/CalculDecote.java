@@ -5,10 +5,9 @@ import static com.kerware.simulateurreusine.Config.*;
 public class CalculDecote implements ICalculateur {
 	private double nbPartsDeclarants;
 	private double montantImpot;
-	
-	public CalculDecote(double nbPartsDeclarants, double montantImpot) {
-		this.nbPartsDeclarants = nbPartsDeclarants;
-		this.montantImpot = montantImpot;
+
+	public CalculDecote() {
+
 	}
 	
     @Override
@@ -32,7 +31,7 @@ public class CalculDecote implements ICalculateur {
     	if (this.montantImpot <= decote) {
             decote = this.montantImpot;
         }
-    	
+		System.out.println("decote : " + decote);
         return decote;
     }
 

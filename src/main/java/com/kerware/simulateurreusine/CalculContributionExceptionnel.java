@@ -5,11 +5,10 @@ import static com.kerware.simulateurreusine.Config.*;
 public class CalculContributionExceptionnel implements ICalculateur {
 	double revenuFicalReference;
 	double nbPartsDeclarants;
-	
-	public CalculContributionExceptionnel(double revenuFicalReference, double nbPartsDeclarants) {
-		this.revenuFicalReference = revenuFicalReference;
-		this.nbPartsDeclarants = nbPartsDeclarants;
-	}
+
+    public CalculContributionExceptionnel() {
+
+    }
 	
     @Override
     public double calculer() {

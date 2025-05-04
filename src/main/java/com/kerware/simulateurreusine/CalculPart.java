@@ -1,19 +1,32 @@
 package com.kerware.simulateurreusine;
 
+import com.kerware.simulateur.SituationFamiliale;
+
 public class CalculPart implements ICalculateur {
     private SituationFamilialeReusine sitFam;
     private int nbEnfant;
     private int nbEnfantHandicape;
     private boolean parentIsole;
 
-    public CalculPart(int nbEnfant, int nbEnfantHandicape, boolean parentIsole) {
-        this.nbEnfant = nbEnfant;
-        this.nbEnfantHandicape = nbEnfantHandicape;
-        this.parentIsole = parentIsole;
+    public CalculPart() {
+
     }
 
     @Override
     public double calculer() {
+        if ( nbEnfantHandicape > nbEnfant ) {
+            throw new IllegalArgumentException("Le nombre d'enfants handicapés ne peut pas être supérieur au nombre d'enfants");
+        }
+        if ( nbEnfant > 7 ) {
+            throw new IllegalArgumentException("Le nombre d'enfants ne peut pas être supérieur à 7");
+        }
+        if ( nbEnfantHandicape < 0 ) {
+            throw new IllegalArgumentException("Le nombre d'enfants handicapés ne peut pas être négatif");
+        }
+        if ( parentIsole && ( sitFam == SituationFamilialeReusine.MARIE || sitFam == SituationFamilialeReusine.PACSE ) ) {
+            throw new IllegalArgumentException("Un parent isolé ne peut pas être marié ou pacsé");
+        }
+
         double nbParts;
 
         nbParts = calculerPartSituation();
@@ -38,7 +51,7 @@ public class CalculPart implements ICalculateur {
      * Calcule les parts basé sur la situation
      * @return
      */
-    public int calculerPartSituation() {
+    private int calculerPartSituation() {
         switch (sitFam) {
             // Si celibataire, divorcé ou veuf : 1 part
             case CELIBATAIRE:
@@ -49,11 +62,8 @@ public class CalculPart implements ICalculateur {
             // Si marié ou pacsé : 2 parts
             case MARIE:
             case PACSE:
-                return 2;
-
-            // Si aucune situation (??) : 0
             default:
-                return 0;
+                return 2;
         }
     }
 
@@ -64,10 +74,8 @@ public class CalculPart implements ICalculateur {
     private double calculerPartEnfant() {
         if (nbEnfant <= 2) {
             return nbEnfant * 0.5;
-        } else if (nbEnfant > 2) {
-            return 1.0 + (nbEnfant - 2);
         }
-        return 0;
+        return 1.0 + (nbEnfant - 2);
     }
 
     /**
