@@ -11,9 +11,6 @@ public class CalculRevenuReference implements ICalculateur {
 
     @Override
     public double calculer() {
-        if ( revenuNetDeclarant1  < 0 || revenuNetDeclarant2 < 0 ) {
-            throw new IllegalArgumentException("Le revenu net ne peut pas être négatif");
-        }
 
         double revenuFicalReference = revenuNetDeclarant1 + revenuNetDeclarant2 - abattement;
 

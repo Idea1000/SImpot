@@ -1,6 +1,6 @@
 package com.kerware.simulateurreusine;
 
-import com.kerware.simulateur.SituationFamiliale;
+import com.kerware.simulateurreusine.SituationFamilialeReusine;
 
 public class CalculPart implements ICalculateur {
     private SituationFamilialeReusine sitFam;
