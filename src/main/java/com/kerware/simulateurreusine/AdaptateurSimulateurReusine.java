@@ -13,33 +13,33 @@ public class AdaptateurSimulateurReusine implements ICalculateurImpotReusine {
 
 
     @Override
-    public void setRevenusNetDeclarant1(int rn) {
-        this.revenusNetDecl1 = rn;
+    public void setRevenusNetDeclarant1(int revenuNet) {
+        this.revenusNetDecl1 = revenuNet;
     }
 
     @Override
-    public void setRevenusNetDeclarant2(int rn) {
-        this.revenusNetDecl2 = rn;
+    public void setRevenusNetDeclarant2(int revenuNet) {
+        this.revenusNetDecl2 = revenuNet;
     }
 
     @Override
-    public void setSituationFamiliale(SituationFamilialeReusine sf) {
-        this.situationFamiliale = sf;
+    public void setSituationFamiliale(SituationFamilialeReusine situationFamiliale) {
+        this.situationFamiliale = situationFamiliale;
     }
 
     @Override
-    public void setNbEnfantsACharge(int nbe) {
-        this.nbEnfantsACharge = nbe;
+    public void setNbEnfantsACharge(int nbEnfantsACharge) {
+        this.nbEnfantsACharge = nbEnfantsACharge;
     }
 
     @Override
-    public void setNbEnfantsSituationHandicap(int nbesh) {
-        this.nbEnfantsSituationHandicap = nbesh;
+    public void setNbEnfantsSituationHandicap(int nbEnfSituationHandicap) {
+        this.nbEnfantsSituationHandicap = nbEnfSituationHandicap;
     }
 
     @Override
-    public void setParentIsole(boolean pi) {
-        this.parentIsole = pi;
+    public void setParentIsole(boolean parentIsole) {
+        this.parentIsole = parentIsole;
     }
 
     @Override
