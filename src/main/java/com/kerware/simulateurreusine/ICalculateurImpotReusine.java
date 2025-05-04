@@ -2,12 +2,12 @@ package com.kerware.simulateurreusine;
 
 public interface ICalculateurImpotReusine {
 
-    public void setRevenusNetDeclarant1( int rn );
-    public void setRevenusNetDeclarant2( int rn );
-    public void setSituationFamiliale( SituationFamilialeReusine sf );
-    public void setNbEnfantsACharge( int nbe );
-    public void setNbEnfantsSituationHandicap( int nbesh );
-    public void setParentIsole( boolean pi );
+    public void setRevenusNetDeclarant1( int revenuNet );
+    public void setRevenusNetDeclarant2( int revenuNet );
+    public void setSituationFamiliale( SituationFamilialeReusine situationFamiliale );
+    public void setNbEnfantsACharge( int nbEnfantsACharge );
+    public void setNbEnfantsSituationHandicap( int nbEnfSituationHandicap );
+    public void setParentIsole( boolean parentIsole );
 
     public void calculImpotSurRevenuNet();
 
