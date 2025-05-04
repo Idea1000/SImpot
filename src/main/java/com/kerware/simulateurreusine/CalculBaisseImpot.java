@@ -13,4 +13,12 @@ public class CalculBaisseImpot implements ICalculateur {
     public double calculer() {
     	return this.montantImpotDeclarants - this.montantImpot;
     }
+
+	public void setMontantImpotDeclarants(double montantImpotDeclarants) {
+		this.montantImpotDeclarants = montantImpotDeclarants;
+	}
+
+	public void setMontantImpot(double montantImpot) {
+		this.montantImpot = montantImpot;
+	}
 }

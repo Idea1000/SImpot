@@ -36,7 +36,17 @@ public class CalculContributionExceptionnel implements ICalculateur {
         } while(i < 5);
 
         contributionExceptionnelle = Math.round(contributionExceptionnelle);
+
+        System.out.println("Contribution exceptionnelle sur les hauts revenus : " + contributionExceptionnelle);
     	
         return contributionExceptionnelle;
+    }
+
+    public void setRevenuFicalReference(double revenuFicalReference) {
+        this.revenuFicalReference = revenuFicalReference;
+    }
+
+    public void setNbPartsDeclarants(double nbPartsDeclarants) {
+        this.nbPartsDeclarants = nbPartsDeclarants;
     }
 }

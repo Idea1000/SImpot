@@ -9,7 +9,7 @@ public class Config {
     public static final int limite04 = 177106;
     public static final int limite05 = Integer.MAX_VALUE;
 
-    public static final int[] limites = new int[6];
+    public static final int[] limites = new int[]{limite00, limite01, limite02, limite03, limite04, limite05};
 
     // Les taux d'imposition par tranche
     public static final double taux00 = 0.0;
@@ -18,7 +18,7 @@ public class Config {
     public static final double taux03 = 0.41;
     public static final double taux04 = 0.45;
 
-    public static final double[] taux = new double[5];
+    public static final double[] taux  = new double[]{taux00, taux01, taux02, taux03, taux04};
 
     // Les limites des tranches pour la contribution exceptionnelle sur les hauts revenus
     public static final int limiteCEHR00 = 0;
@@ -27,7 +27,7 @@ public class Config {
     public static final int limiteCEHR03 = 1000000;
     public static final int limiteCEHR04 = Integer.MAX_VALUE;
 
-    public static final int[] limitesCEHR = new int[5];
+    public static final int[] limitesCEHR = new int[]{limiteCEHR00, limiteCEHR01, limiteCEHR02, limiteCEHR03, limiteCEHR04};
 
     // Les taux de la contribution exceptionnelle sur les hauts revenus pour les celibataires
     public static final double tauxCEHRCelibataire00 = 0.0;
@@ -35,7 +35,7 @@ public class Config {
     public static final double tauxCEHRCelibataire02 = 0.04;
     public static final double tauxCEHRCelibataire03 = 0.04;
 
-    public static final double[] tauxCEHRCelibataire = new double[4];
+    public static final double[] tauxCEHRCelibataire = new double[]{tauxCEHRCelibataire00, tauxCEHRCelibataire01, tauxCEHRCelibataire02, tauxCEHRCelibataire03};
 
     // Les taux de la contribution exceptionnelle sur les hauts revenus pour les couples
     public static final double tauxCEHRCouple00 = 0.0;
@@ -43,7 +43,7 @@ public class Config {
     public static final double tauxCEHRCouple02 = 0.03;
     public static final double tauxCEHRCouple03 = 0.04;
 
-    public static final double[] tauxCEHRCouple = new double[4];
+    public static final double[] tauxCEHRCouple = new double[]{tauxCEHRCouple00, tauxCEHRCouple01, tauxCEHRCouple02, tauxCEHRCouple03};
 
     // Abattement
     public static final int limiteAbattementMax = 14171;

@@ -2,9 +2,9 @@ package com.kerware.simulateurreusine;
 
 public class CalculPart implements ICalculateur {
     private SituationFamilialeReusine sitFam;
-    private final int nbEnfant;
-    private final int nbEnfantHandicape;
-    private final boolean parentIsole;
+    private int nbEnfant;
+    private int nbEnfantHandicape;
+    private boolean parentIsole;
 
     public CalculPart(int nbEnfant, int nbEnfantHandicape, boolean parentIsole) {
         this.nbEnfant = nbEnfant;
@@ -38,7 +38,7 @@ public class CalculPart implements ICalculateur {
      * Calcule les parts basé sur la situation
      * @return
      */
-    private int calculerPartSituation() {
+    public int calculerPartSituation() {
         switch (sitFam) {
             // Si celibataire, divorcé ou veuf : 1 part
             case CELIBATAIRE:
@@ -98,5 +98,21 @@ public class CalculPart implements ICalculateur {
      */
     private double calculerPartEnfantHandicape() {
         return nbEnfantHandicape * 0.5;
+    }
+
+    public void setSitFam(SituationFamilialeReusine sitFam) {
+        this.sitFam = sitFam;
+    }
+
+    public void setNbEnfant(int nbEnfant) {
+        this.nbEnfant = nbEnfant;
+    }
+
+    public void setNbEnfantHandicape(int nbEnfantHandicape) {
+        this.nbEnfantHandicape = nbEnfantHandicape;
+    }
+
+    public void setParentIsole(boolean parentIsole) {
+        this.parentIsole = parentIsole;
     }
 }

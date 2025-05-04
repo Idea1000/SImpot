@@ -35,4 +35,12 @@ public class CalculDecote implements ICalculateur {
     	
         return decote;
     }
+
+	public void setNbPartsDeclarants(double nbPartsDeclarants) {
+		this.nbPartsDeclarants = nbPartsDeclarants;
+	}
+
+	public void setMontantImpot(double montantImpot) {
+		this.montantImpot = montantImpot;
+	}
 }
