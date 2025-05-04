@@ -1,8 +1,12 @@
 package com.kerware.simulateurreusine;
 
+import static com.kerware.simulateurreusine.Config.*;
+
 public class CalculImpot implements ICalculateur {
     @Override
     public double calculer() {
-        return 0;
+    	double montantImpot = 0;
+    	
+        return (int)montantImpot;
     }
 }

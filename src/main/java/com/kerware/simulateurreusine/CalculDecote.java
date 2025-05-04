@@ -1,8 +1,38 @@
 package com.kerware.simulateurreusine;
 
+import static com.kerware.simulateurreusine.Config.*;
+
 public class CalculDecote implements ICalculateur {
+	private double nbPartsDeclarants;
+	private double montantImpot;
+	
+	public CalculDecote(double nbPartsDeclarants, double montantImpot) {
+		this.nbPartsDeclarants = nbPartsDeclarants;
+		this.montantImpot = montantImpot;
+	}
+	
     @Override
     public double calculer() {
-        return 0;
+    	double decote = 0;
+    	
+    	if(this.nbPartsDeclarants == 1) {
+    		if(this.montantImpot < seuilDecoteDeclarantSeul) {
+    			decote = seuilDecoteDeclarantSeul - (this.montantImpot * tauxDecote);
+    		}
+    	}
+    	
+    	if (this.nbPartsDeclarants == 2) {
+            if (this.montantImpot < seuilDecoteDeclarantCouple) {
+                 decote =  decoteMaxDeclarantCouple - (montantImpot * tauxDecote);
+            }
+        }
+    	
+    	decote = Math.round(decote);
+    	
+    	if (this.montantImpot <= decote) {
+            decote = this.montantImpot;
+        }
+    	
+        return decote;
     }
 }
