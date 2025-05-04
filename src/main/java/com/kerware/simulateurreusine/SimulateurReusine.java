@@ -283,19 +283,19 @@ public class SimulateurReusine {
         // EXIG  : EXG_IMPOT_03
         switch (sitFam) {
             case CELIBATAIRE:
-            	nbPartsDeclarants = 1;
+                nbPartsDeclarants = 1;
                 break;
             case MARIE:
-            	nbPartsDeclarants = 2;
+                nbPartsDeclarants = 2;
                 break;
             case DIVORCE:
-            	nbPartsDeclarants = 1;
+                nbPartsDeclarants = 1;
                 break;
             case VEUF:
-            	nbPartsDeclarants = 1;
+                nbPartsDeclarants = 1;
                 break;
             case PACSE:
-            	nbPartsDeclarants = 2;
+                nbPartsDeclarants = 2;
                 break;
         }
 
@@ -304,9 +304,9 @@ public class SimulateurReusine {
 
         // parts enfants à charge
         if (nbEnfant <= 2) {
-        	nbParts = nbPartsDeclarants + nbEnfant * 0.5;
+            nbParts = nbPartsDeclarants + nbEnfant * 0.5;
         } else if (nbEnfant > 2) {
-        	nbParts = nbPartsDeclarants + 1.0 + (nbEnfant - 2);
+            nbParts = nbPartsDeclarants + 1.0 + (nbEnfant - 2);
         }
 
         // parent isolé
@@ -315,13 +315,13 @@ public class SimulateurReusine {
 
         if (parentIsole) {
             if (nbEnfant > 0) {
-            	nbParts = nbParts + 0.5;
+                nbParts = nbParts + 0.5;
             }
         }
 
         // Veuf avec enfant
         if (sitFam == SituationFamilialeReusine.VEUF && nbEnfant > 0) {
-        	nbParts = nbParts + 1;
+            nbParts = nbParts + 1;
         }
 
         // enfant handicapé
