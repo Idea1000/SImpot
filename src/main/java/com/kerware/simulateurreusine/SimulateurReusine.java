@@ -76,7 +76,7 @@ public class SimulateurReusine {
     private double plafDemiPart = 1759;
 
     private double seuilDecoteDeclarantSeul = 1929;
-    private double seuilDecoteDeclarantCouple    = 3191;
+    private double seuilDecoteDeclarantCouple = 3191;
 
     private double decoteMaxDeclarantSeul = 873;
     private double decoteMaxDeclarantCouple = 1444;
@@ -85,8 +85,10 @@ public class SimulateurReusine {
     // revenu net
     private int rNetDecl1 = 0;
     private int rNetDecl2 = 0;
+    
     // nb enfants
     private int nbEnf = 0;
+    
     // nb enfants handicapés
     private int nbEnfH = 0;
 
@@ -101,18 +103,23 @@ public class SimulateurReusine {
 
     // nombre de parts des  déclarants
     private double nbPtsDecl = 0;
+    
     // nombre de parts du foyer fiscal
     private double nbPts = 0;
 
     // decote
     private double decote = 0;
+    
     // impôt des déclarants
     private double mImpDecl = 0;
+    
     // impôt du foyer fiscal
     private double mImp = 0;
     private double mImpAvantDecote = 0;
+    
     // parent isolé
     private boolean parIso = false;
+    
     // Contribution exceptionnelle sur les hauts revenus
     private double contribExceptionnelle = 0;
 
@@ -307,7 +314,7 @@ public class SimulateurReusine {
         System.out.println("Parent isolé : " + parIso);
 
         if (parIso) {
-            if (nbEnf > 0){
+            if (nbEnf > 0) {
                 nbPts = nbPts + 0.5;
             }
         }
@@ -424,12 +431,13 @@ public class SimulateurReusine {
         // decote
         if (nbPtsDecl == 1) {
             if (mImp < seuilDecoteDeclarantSeul) {
-                 decote = decoteMaxDeclarantSeul - (mImp  * tauxDecote);
+                 decote = decoteMaxDeclarantSeul - (mImp * tauxDecote);
             }
         }
+        
         if (nbPtsDecl == 2) {
             if (mImp < seuilDecoteDeclarantCouple) {
-                 decote =  decoteMaxDeclarantCouple - (mImp  * tauxDecote);
+                 decote =  decoteMaxDeclarantCouple - (mImp * tauxDecote);
             }
         }
         
